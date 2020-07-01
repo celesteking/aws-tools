@@ -4,11 +4,12 @@ require 'optparse'
 require 'logger'
 require 'aws-sdk-route53'
 
-Version = '0.1'
+Version = '0.2'
 
 @options = { dry_run: true }
 @logger = Logger.new($stderr)
 
+# -----------------------------------------------------------------------------
 class HostedZones
   include Enumerable
   attr_reader :name
@@ -98,6 +99,7 @@ ensure
   puts
 end
 
+# -----------------------------------------------------------------------------
 def verbose?; @options[:verbose] end
 def dryrun?; @options[:dry_run] end
 def format_zone(zone); zone.delete('/hostedzone/'); end
