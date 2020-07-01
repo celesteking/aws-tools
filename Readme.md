@@ -2,6 +2,10 @@
 
 `bundle install` in this dir.
 
+Be sure to have your AWS environment ready to go. We use AWS Ruby SDK in scripts but provide no cmdline options to configure it, thus you have to have it ready via ENV vars. 
+Usually, properly configuring `~/.aws/credentials` and setting `export AWS_PROFILE=my_profile` is enough to get it going. 
+If you happen to use `aws` standard command suggested by AWS docs to do your AWS management woes, you're pretty much already configured.
+
 #### AWS Route53 Zone deletion
 
 Handled by `route53-delete-zones` script.
